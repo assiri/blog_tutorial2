@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-sm-4">
+{{#link-to "blogs.new" class="btn btn-primary btn-block"}} Add new Blog{{/link-to}}
+<ul class="list-group">
+{{#each model as |blog|}}
+{{#link-to 'blogs.blog' blog}} {{blog.title}} {{/link-to}}
+<!-- <li>{{blog.title}} - {{blog.body}}</li> -->
+<ol>
+
+  {{#each blog.comments as |comment|}}
+  <li>{{comment.body}}</li>
+  {{/each}}
+</ol>
+{{/each}}
+</ul>
+  </div>
+
+  <div class="col-sm-8">
+    {{outlet}}
+  </div>
+</div>
